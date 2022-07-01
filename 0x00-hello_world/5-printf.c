@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+/**
+ * main - Starting point of of this programme
+ * Description: Prints a specific message the screen
+ * Return: 0 if successfull and any other number if not
+ */
+int main(void)
+{
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	(return 0);
+}
