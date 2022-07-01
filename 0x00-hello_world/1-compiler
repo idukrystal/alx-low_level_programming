@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -o $(echo $CFILE | sed '$ s/.$//')o $CFILE
+gcc -c -o $(echo $CFILE | sed '$ s/.$//')o $CFILE
