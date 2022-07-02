@@ -17,7 +17,7 @@ int main(void)
 			for (k = j + 1; k < 10; k++)
 			{
 				putchar(i + 48);
-				putchar(j + 48);
+				putchar(j + 48);c
 				if (i == 7)
 				{
 					putchar('\n');
