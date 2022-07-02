@@ -9,6 +9,7 @@ int main(void)
 {
 	int i;
 	int j;
+	int k;
 
 	for (i = 0; i < 10; i++)
 	{
@@ -18,6 +19,7 @@ int main(void)
 			{
 				putchar(i + 48);
 				putchar(j + 48);
+				putchar(k + 48);
 				if (i == 7)
 				{
 					putchar('\n');
