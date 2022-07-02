@@ -1,4 +1,3 @@
-(12 sloc)  234 Bytes
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
