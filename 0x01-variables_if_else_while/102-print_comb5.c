@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-777	int i;
+	int i;
 	int j;
 	int unit;
 7	int tenth;
