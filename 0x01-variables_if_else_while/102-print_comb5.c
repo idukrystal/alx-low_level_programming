@@ -27,12 +27,12 @@ int main(void)
 			putchar(48 + unit);
 			if (i == 98 && j == 99)
 			{
-				putchar(' ');
 				break;
 			}
 			putchar(',');
 			putchar(' ');
 		}
 	}
+	putchar('\n');
 	return (0);
 }
