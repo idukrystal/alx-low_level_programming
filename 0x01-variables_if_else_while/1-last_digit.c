@@ -11,11 +11,10 @@ int main(void)
 {
 	int n;
 	int last;
+	char *final_message;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	char *final_message;
 
 	last = n % 10;
 
