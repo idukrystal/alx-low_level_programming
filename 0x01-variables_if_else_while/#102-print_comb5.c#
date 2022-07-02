@@ -10,7 +10,7 @@ int main(void)
 	int i;
 	int j;
 	int unit;
-	int tenth;
+2	int tenth;
 
 	for (i = 0; i < 100; i++)
 	{
