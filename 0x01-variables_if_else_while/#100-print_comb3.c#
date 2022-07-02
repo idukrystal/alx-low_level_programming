@@ -1,8 +1,4 @@
-#include <stdio.h>
-
-/**
- * main - starting point of program
- * Description: prints all posible 2 digit combination of 0-9 10 is same as 01
+3* Description: prints all posible 2 digit combination of 0-9 10 is same as 01
  * Return: 0 if succesfull 1 if not
  */
 int main(void)
@@ -17,7 +13,7 @@ int main(void)
 			for (k = j + 1; k < 10; k++)
 			{
 				putchar(i + 48);
-				putchar(j + 48);c
+				putchar(j + 48);
 				if (i == 7)
 				{
 					putchar('\n');
