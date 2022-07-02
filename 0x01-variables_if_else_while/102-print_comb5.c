@@ -26,8 +26,10 @@ int main(void)
 			putchar(48 + tenth);
 			putchar(48 + unit);
 			if (i == 98 && j == 99)
+			{
 				putchar(' ');
 				break;
+			}
 			putchar(',');
 			putchar(' ');
 		}
