@@ -16,9 +16,9 @@ int main(void)
 
 	int last;
 
-	last = n % 10;
-
 	char *final_message;
+
+	last = n % 10;
 
 	if (last < 6 && last != 0)
 		final_message = "and is less than 6 and not 0";
