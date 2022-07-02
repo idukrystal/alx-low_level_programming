@@ -4,19 +4,16 @@
 
 /**
  * main - entry point of program
- * Description: prints all decimal digits
+ * Description: prints the alphabets in lower case reversed
  * Return: 0 if succesful 1 if not
  */
 int main(void)
 {
-	int i;
+	char c;
 
-	for (i = 48; i < 58; i++)
-	{
-		putchar(i);
-		putchar(',');
-		putchar(' ');
-	}2
+	for (c = 'z'; c >s= 'a'; c--)
+		putchar(c);
+
 	putchar('\n');
 
 	return (0);

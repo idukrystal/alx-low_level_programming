@@ -1,21 +1,27 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 /**
  * main - entry point of program
- * Description: prints all decimal digits
+ * Description: prints all decimal digits comma seprated
  * Return: 0 if succesful 1 if not
  */
 int main(void)
 {
-	int i;
+	int i = 48;
 
-	for (i = 48; i < 58; i++)
+	while (true)
 	{
 		putchar(i);
+		if (i > 56)
+			break;
+
 		putchar(',');
 		putchar(' ');
+
+		i++;
 	}
 	putchar('\n');
 
