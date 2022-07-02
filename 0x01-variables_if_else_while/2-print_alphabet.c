@@ -1,13 +1,12 @@
- (12 sloc)  234 Bytes
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdio.h>
 
- /**
-  * main - entry point of program
-  * Description: prints the alphabets in lower case
-  * Return: 0 if succesful 1 if not
-  */
+/**
+ * main - entry point of program
+ * Description: prints the alphabets in lower case
+ * Return: 0 if succesful 1 if not
+ */
 int main(void)
 {
 	for (char c = 'a'; c <= 'z'; c++)

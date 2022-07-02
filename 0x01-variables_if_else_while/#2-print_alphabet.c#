@@ -1,18 +1,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
+2
 /**
  * main - entry point of program
- * Description: prints the alphabets in lowercase then uppercase
+ * Description: prints the alphabets in lower case
  * Return: 0 if succesful 1 if not
  */
 int main(void)
 {
 	for (char c = 'a'; c <= 'z'; c++)
-		putchar(c);
-
-	for (char c = 'A'; c <= 'Z'; c++)
 		putchar(c);
 
 	putchar('\n');

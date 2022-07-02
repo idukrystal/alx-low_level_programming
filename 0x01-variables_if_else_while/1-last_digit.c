@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdio.h>
 
 /**
  * main - programs entry point
@@ -18,7 +18,7 @@ int main(void)
 
 	char *final_message;
 
-	if (last < 6 && last !=0)
+	if (last < 6 && last != 0)
 		final_message = "and is less than 6 and not 0";
 	else if (last == 0)
 		final_message = "and is 0";
