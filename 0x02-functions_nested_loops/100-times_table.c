@@ -18,18 +18,18 @@ void print_times_table(int n)
 		for (j = 0; j <= n; j++)
 		{
 			multiple = i * j;
-			if (multiple < 10)
+
+			if (multiple >= 100)
 			{
-				_putchar('0' + multiple);
+				_putchar('0' + (multiple / 100));
 			}
-			else
+			if (multiple >= 10)
 			{
-				_putchar('0' + (multiple / 10));
-				_putchar('0' + (multiple % 10));
+				_putchar('0' + ((multiple % 100) / 10));
 			}
+			_putchar('0' + multiple % 10);
 			if (j == n)
 				break;
-
 			_putchar(',');
 			_putchar(' ');
 			if ((multiple + i) >= 100)
