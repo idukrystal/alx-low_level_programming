@@ -28,6 +28,9 @@ void times_table(void)
 
 			_putchar(',');
 			_putchar(' ');
+
+			if (!(multiple < 10))
+				continue;
 			_putchar(' ');
 		}
 		_putchar('\n');
