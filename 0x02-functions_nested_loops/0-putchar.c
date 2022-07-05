@@ -9,9 +9,10 @@ int main(void)
 		_putchar(message[i]);
 	}
 	_putchar('\n');
+	return 0;
 }
 
-int strlen(char *string)
+int len(char *string)
 {
 	int i = 0;
 
