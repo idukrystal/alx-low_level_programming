@@ -23,7 +23,7 @@ void times_table(void)
 				_putchar('0' + (multiple / 10));
 				_putchar('0' + (multiple % 10));
 			}
-			if (multiple == 81)
+			if (j == 9)
 				break;
 
 			_putchar(',');
