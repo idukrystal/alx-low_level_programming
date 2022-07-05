@@ -6,6 +6,8 @@
  */
 void print_times_table(int n)
 {
+	if (n > 15 || n < 0)
+		return;
 	int i;
 	int j;
 	int multiple;
@@ -29,7 +31,9 @@ void print_times_table(int n)
 
 			_putchar(',');
 			_putchar(' ');
-
+			if ((multiple + i) >= 100)
+				continue;
+			_putchar(' ');
 			if ((multiple + i) >= 10)
 				continue;
 			_putchar(' ');
