@@ -29,7 +29,7 @@ void times_table(void)
 			_putchar(',');
 			_putchar(' ');
 
-			if (!(multiple < 10))
+			if ((multiple + i) >= 10)
 				continue;
 			_putchar(' ');
 		}
