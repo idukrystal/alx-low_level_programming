@@ -9,7 +9,12 @@ void print_to_98(int n)
 {
 	int i;
 
-	for (i = n; i <= 98; i++)
+	while (i != 98){
+		if (i > 98)
+			i--;
+		else
+			i++;
 		printf("%d, ", i);
-	putchar('\n');
+	}
+	printf("%d\n", i);
 }
