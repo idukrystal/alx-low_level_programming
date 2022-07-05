@@ -1,5 +1,8 @@
 #include "main.h"
 
+/**
+ * times_table - prints a 9 by 9 multiplication table
+ */
 void times_table(void)
 {
 	int i;
@@ -7,6 +10,7 @@ void times_table(void)
 	int multiple;
 
 	for (i = 0; i < 10; i++)
+	{
 		for (j = 0; j < 10; j++)
 		{
 			multiple = i * j;
@@ -19,9 +23,13 @@ void times_table(void)
 				_putchar('0' + (multiple / 10));
 				_putchar('0' + (multiple % 10));
 			}
+			if (multiple == 81)
+				break;
+
 			_putchar(',');
 			_putchar(' ');
 			_putchar(' ');
 		}
-
+		_putchar('\n');
+	}
 }
