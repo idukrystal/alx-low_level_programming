@@ -1,5 +1,4 @@
-#include "_putchar.c"
-#include <string.h>
+#include <main.h>
 
 int main(void)
 {
@@ -10,4 +9,14 @@ int main(void)
 		_putchar(message[i]);
 	}
 	_putchar('\n');
+}
+
+int strlen(char *string)
+{
+	int i = 0;
+
+	while (string[i] != '\n')
+		i++;
+
+	return (i);
 }
