@@ -11,10 +11,11 @@ int main(void)
 	long int x = 1;
 	long int y = 2;
 
-	printf("%li, %li, ", x, y);
 
 	/* temporary variable to hold x */
-	long int tmp;
+        long int tmp;
+	
+	printf("%li, %li, ", x, y);
 
 	/* counts how many numbers have been computed*/
 	   int counter = 2;
