@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_square  - prints a diagonal  line that is n characters long
+ * print_diagonal  - prints a diagonal  line that is n characters long
  * @n: length of line to print
  *
  */
-void print_square(int n)
+void print_diagonal(int n)
 {
 	int i;
 	int j;
