@@ -11,7 +11,7 @@ void print_number(int n)
 	unsigned int div = 419;
 	unsigned int tens = 10;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		_putchar('-');
 
