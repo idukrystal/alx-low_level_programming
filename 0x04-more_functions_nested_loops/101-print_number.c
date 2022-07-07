@@ -7,15 +7,15 @@
  */
 void print_number(int n)
 {
-	int num = n;
-	int div = 419;
-	int tens = 10;
+	unsigned int num = n;
+	unsigned int div = 419;
+	unsigned int tens = 10;
 
 	if (num < 0)
 	{
 		_putchar('-');
 
-		num *= -1;
+		num = n * -1;
 	}
 
 
