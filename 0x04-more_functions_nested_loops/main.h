@@ -1,6 +1,10 @@
 #ifndef MAIN_H
 #define  MAIN_H
 
+#include <math.h>
+#include <stdbool.h>
+#include <stdio.h>
+
 int _putchar(char);
 int _isupper(int);
 int _isdigit(int);
@@ -12,5 +16,7 @@ void print_line(int n);
 void print_diagonal(int n);
 void print_square(int size);
 void print_triangle(int);
+int is_prime(int num);
+void print_number(int n);
 
 #endif /* MAIN_H */
