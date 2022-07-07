@@ -17,7 +17,7 @@ void print_square(int n)
 			_putchar('#');
 		}
 		if (i != (n-1))
-			putchar('#');
+			_putchar('#');
 
 	}
 	_putchar('#');
