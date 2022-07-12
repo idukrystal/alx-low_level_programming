@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+/**
+ * main - generates randon numbers
+ * Return: 0 on sucesd
+ */
 int main(void)
 {
 	int num;
@@ -9,7 +13,7 @@ int main(void)
 	srand(time(0));
 	num = rand();
 
-	printf("%d", num);
+	printf("%d\n", num);
 
 	return (0);
 }
