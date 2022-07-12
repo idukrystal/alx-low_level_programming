@@ -3,11 +3,11 @@
 int _atoi(char *s)
 {
 	int neg = 1;
-	int num = 0;
+	unsigned int num = 0;
 	int len = _strlen(s);
 	int start = -1;
 	int stop =  0;
-	int tens = 1;
+	unsigned int tens = 1;
 	int connects = 1;
 	int i = 0;
 	int j = 0;
@@ -32,7 +32,6 @@ int _atoi(char *s)
 			}
 			if (!connects)
 			{
-				neg = 1;
 				connects = 1;
 				continue;
 			}
