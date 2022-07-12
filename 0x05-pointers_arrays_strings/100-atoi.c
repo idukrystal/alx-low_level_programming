@@ -1,21 +1,21 @@
 #include "main.h"
 
+/**
+ * _atoi - extracts  a signed int from a string
+ * @s: string to covert
+ *
+ * Return: extracted int
+ */
 int _atoi(char *s)
 {
-	int neg = 1;
 	unsigned int num = 0;
-	int len = _strlen(s);
-	int start = -1;
-	int stop =  0;
-	unsigned int tens = 1;
-	int connects = 1;
-	int i = 0;
-	int j = 0;
+	int len = _strlen(s), start = -1, stop =  0;
+	int i = 0, connects = 1, neg = 1;
+	char c;
 
 	for (i = 0 ;  i < len; i++)
 	{
-		char c = *(s + i);
-
+		c = *(s + i);
 		if ((c >= '0'  && c <= '9') || (c == '+' || c == '-'))
 		{
 			if (c == '-' || c == '+')
@@ -43,17 +43,12 @@ int _atoi(char *s)
 				i++;
 				c = *(s + i);
 			}
-			for (j = stop; j >= start; j--)
-			{
-				num += (*(s + j) - '0') * tens ;
-				tens *= 10;
-			}
+			num = to_int(s, start, stop);
 			break;
 		}
 	}
 	return (num * neg);
 }
-#include "main.h"
 
 /**
  * _strlen - returns the length of a string
@@ -69,4 +64,29 @@ int _strlen(char *s)
 		i++;
 
 	return (i);
+}
+
+/**
+ * to_int - extract an int betweet two points in a string
+ * @s: string to extract int from
+ *
+ * @start: where int starts from in string
+ *
+ * @stop: where int stops in string
+ *
+ * Return: extracted int
+ */
+int to_int(char *s, int start, int stop)
+{
+	unsigned int tens = 1;
+	int j = 0;
+	int num = 0;
+
+	for (j = stop; j >= start; j--)
+	{
+		num += (*(s + j) - '0') * tens;
+		tens *= 10;
+	}
+
+	return (num);
 }

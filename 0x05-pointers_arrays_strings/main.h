@@ -13,5 +13,6 @@ void print_array(int *a, int n);
 void puts_half(char *str);
 void puts2(char *str);
 int _atoi(char *s);
+int to_int(char *s, int start, int stop);
 
 #endif
