@@ -14,7 +14,7 @@ int _atoi(char *s)
 
 	for (i = 0 ;  i < len; i++)
 	{
-		char c = s[i];
+		char c = *(s + i);
 		if ((c >= '0'  && c <= '9')|| (c == '+' || c == '-') )
 		{
 			if (c == '-' || c == '+')
@@ -26,7 +26,7 @@ int _atoi(char *s)
 					if (c == '+')
 						neg *= 1;
 					i++;
-					c = s[i];
+					c = *(s + i);
 				}
 				connects = (c >=  '0'  &&  c <= '9') ;
 			}
@@ -41,11 +41,11 @@ int _atoi(char *s)
 			{
 				stop  = i;
 				i++;
-				c = s[i];
+				c = *(s + i);
 			}
 			for (j = stop; j >= start; j--)
 			{
-				num += (s[j] - '0') * tens ;
+				num += (*(s + j) - '0') * tens ;
 				tens *= 10;
 			}
 			break;
