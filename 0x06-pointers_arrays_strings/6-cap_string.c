@@ -24,8 +24,12 @@ char *cap_string(char *s)
 		if (cap)
 		{
 			if (c <= 'z' && c >= 'a')
+			{
 				s[i] = c - 32;
-			cap = 0;
+				cap = 0;
+			}
+			if (c <= 'Z' && c>= 'A')
+				cap = 0;
 		}
 	}
 	return (s);
