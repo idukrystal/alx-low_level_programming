@@ -1,0 +1,97 @@
+#include "main.h"
+#include <stdio.h>
+
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
+{
+	long int a = to_int(n1);
+	long int  b = to_int(n2);
+	long int num;
+	long  int ten1 = 1;
+        long  int ten2 = 10;
+        unsigned int i = 40;
+	int j = 0;
+
+	num = a + b;
+
+	printf("%ll  %ll  %ll",a, b, num);
+
+	while (i != 0)
+        {
+                i = num  / ten1;
+                i = i / ten2;
+
+                if (ten2 > ten1)
+                        ten1 *= 10;
+                else
+                        ten2 *= 10;
+
+		j++;
+	}
+	j--;
+	if (j > size_r - 1)
+		return 0;
+	if (ten2 > ten1)
+                ten2 /= 10;
+        else
+                ten1 /= 10;
+
+	j = 0;
+        while ((ten1 * ten2)  > 1)
+        {
+                if (ten2 > ten1)
+                        ten2 /= 10;
+                else
+                        ten1 /= 10;
+
+                i = num / ten1;
+                i = i / ten2;
+		r[j] = i;
+                num = num - (i * ten1 * ten2);
+		j++;
+        }
+	return r;
+}
+
+/**
+ * to_int - extract an int betweet two points i\
+n a string
+ * @s: string to extract int from
+ *
+ * @start: where int starts from in string
+ *
+ * @stop: where int stops in string
+ *
+ * Return: extracted int
+ */
+long long to_int(char *s)
+{
+	int len = _strlen(s) - 1;
+        long long tens = 1;
+        int j = 0;
+        long long num = 0;
+
+        for (j = len; j >= 0; j--)
+        {
+                num += (*(s + j) - '0') * tens;
+		tens *= 10;
+        }
+
+        return (num);
+}
+
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string to calculatr length of
+ *
+ * Return: length of string @s
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+	return (i);
+}

@@ -1,71 +1,30 @@
 #include "main.h"
-
 /**
- * cap_string - capitalize every word in a string
- * @s: the string
- *
- * Return: a pointer to modified @s
+ * cap_string - capitalizes all words of a string
+ * @s: input string.
+ * Return: the pointer to dest.
  */
+
 char *cap_string(char *s)
 {
-	int len = _strlen(s);
-	int i = 0;
-	char c;
-	int cap = 0;
+	int count = 0, i;
+	int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 
-	for (; i < len; i++)
+	if (*(s + count) >= 97 && *(s + count) <= 122)
+		*(s + count) = *(s + count) - 32;
+	count++;
+	while (*(s + count) != '\0')
 	{
-		c = s[i];
-		if (isseprator(c))
+		for (i = 0; i < 13; i++)
 		{
-			cap = 1;
-			continue;
-		}
-		if (cap)
-		{
-			if (c <= 'z' && c >= 'a')
+			if (*(s + count) == sep_words[i])
 			{
-				s[i] = c - 32;
-				cap = 0;
+				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+					*(s + (count + 1)) = *(s + (count + 1)) - 32;
+				break;
 			}
-			if (c <= 'Z' && c>= 'A')
-				cap = 0;
 		}
+		count++;
 	}
 	return (s);
-}
-
-/**
- * isseprator - checks if a char is a word seprator
- * @c: the char
- *
- * Return: 0 if c is not a seprator 1 if it is
- */
-int isseprator(char c)
-{
-	char *seprators = ",;.!\?\"(){} \t\n\v";
-	int i = 0;
-
-	for (; i < 14; i++)
-	{
-		if (seprators[i] == c)
-			return (1);
-	}
-	return (0);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
- *
- * Return: length of string @s
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
 }
