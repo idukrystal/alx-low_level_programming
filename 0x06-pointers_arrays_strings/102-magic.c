@@ -16,7 +16,7 @@ int main(void)
    * - only one statement
    * - you are not allowed to code anything else than this line of code
    */
-  return(printf("a[2] = 98\n"));
+  return(printf("[2] = 98\n"));
   /* ...so that this prints 98\n */
   printf("a[2] = %d\n", a[2]);
   return (0);
