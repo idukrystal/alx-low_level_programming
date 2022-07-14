@@ -1,12 +1,30 @@
 #include "main.h"
 #include <stdio.h>
+
+void print_array(int *a, int n)
+{
+    int i;
+
+    i = 0;
+    while (i < n)
+    {
+        if (i != 0)
+        {
+            printf(", ");
+        }
+        printf("%d", a[i]);
+        i++;
+    }
+    printf("\n");
+}
+
 int main(void)
 {
-	char s1[] = "Hello";
-    char s2[] = "World!";
+	char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
+    char *ptr;
 
-    printf("%d\n", _strcmp(s1, s2));
-    printf("%d\n", _strcmp(s2, s1));
-    printf("%d\n", _strcmp(s1, s1));
+    ptr = cap_string(str);
+    printf("%s", ptr);
+    printf("%s", str);
     return (0);
 }
