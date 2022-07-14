@@ -12,5 +12,7 @@ char *cap_string(char *);
 int isseprator(char c);
 char *leet(char *);
 char code(char c);
+char *rot13(char *);
+char rot(char);
 
 #endif /* MAIN_H */
