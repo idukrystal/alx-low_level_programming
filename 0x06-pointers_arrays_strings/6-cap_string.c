@@ -39,10 +39,10 @@ char *cap_string(char *s)
  */
 int isseprator(char c)
 {
-	char *seprators = ",;.!?\"(){} \t";
+	char *seprators = ",;.!?\"(){} \t\n";
 	int i = 0;
 
-	for (; i < 10; i++)
+	for (; i < 15; i++)
 	{
 		if (seprators[i] == c)
 			return (1);
