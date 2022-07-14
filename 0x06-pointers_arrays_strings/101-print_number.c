@@ -1,9 +1,14 @@
 #include "main.h"
-
+/**
+ * print_number - prints a number to the scrern
+ * @n: the number to print
+ *
+ */
 void print_number(int n)
 {
-	unsigned int num = n;
-	unsigned int tens = 10;
+	int num = n;
+	unsigned int ten1 = 1;
+	unsigned int ten2 = 10;
 	unsigned int i = 40;
 
 	if (n < 0)
@@ -11,17 +16,34 @@ void print_number(int n)
 		_putchar('-');
 		num *= -1;
 	}
+
 	while (i != 0)
 	{
-		i = num  / tens;
-		tens *= 10;
+		i = num  / ten1;
+		i = i / ten2;
+
+		if (ten2 > ten1)
+			ten1 *= 10;
+		else
+			ten2 *= 10;
 	}
-	tens /= 10;
-	while(tens  > 1)
+
+	if (ten2 > ten1)
+		ten2 /= 10;
+	else
+		ten1 /= 10;
+
+	while ((ten1 * ten2)  > 1)
 	{
-		tens /= 10;
-		i = num / tens;
+		if (ten2 > ten1)
+			ten2 /= 10;
+		else
+			ten1 /= 10;
+
+		i = num / ten1;
+		i = i / ten2;
+
 		_putchar('0' + i);
-		num = num - (i * tens);
+		num = num - (i * ten1 * ten2);
 	}
 }
