@@ -42,7 +42,7 @@ int isseprator(char c)
 	char *seprators = ",;.!?\"(){} \t\n\v";
 	int i = 0;
 
-	for (; i < 13; i++)
+	for (; i < 14; i++)
 	{
 		if (seprators[i] == c)
 			return (1);
