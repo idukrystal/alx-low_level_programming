@@ -1,0 +1,27 @@
+#include "main.h"
+
+void print_number(int n)
+{
+	unsigned int num = n;
+	unsigned int tens = 10;
+	unsigned int i = 40;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		num *= -1;
+	}
+	while (i != 0)
+	{
+		i = num  / tens;
+		tens *= 10;
+	}
+	tens /= 10;
+	while(tens  > 1)
+	{
+		tens /= 10;
+		i = num / tens;
+		_putchar('0' + i);
+		num = num - (i * tens);
+	}
+}
