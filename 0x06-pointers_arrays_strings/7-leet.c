@@ -10,9 +10,8 @@
 char *leet(char *s)
 {
 	int i = 0;
-	int len = _strlen(s);
 
-	for (; i < len; i++)
+	for (; s[i] != '\0'; i++)
 	{
 		s[i] = code(s[i]);
 	}
@@ -38,20 +37,4 @@ char code(char c)
 			return ('0' + val[i]);
 	}
 	return (c);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
- *
- * Return: length of string @s
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
 }
