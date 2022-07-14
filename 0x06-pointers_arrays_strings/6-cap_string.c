@@ -49,7 +49,6 @@ int isseprator(char c)
 	}
 	return (0);
 }
-#include "main.h"
 
 /**
  * _strlen - returns the length of a string
