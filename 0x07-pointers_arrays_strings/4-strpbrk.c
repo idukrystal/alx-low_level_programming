@@ -38,13 +38,13 @@ int contains(char *s, char c)
 	unsigned int i = 0;
 	char tmp;
 
-	do {
+	while(temp != '\0'){
 		tmp = s[i];
 		if (tmp == c)
 			return (1);
 
 		i++;
-	} while (tmp != '\0');
+	}
 
 	return (0);
 }
