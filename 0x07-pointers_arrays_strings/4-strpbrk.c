@@ -38,7 +38,7 @@ int contains(char *s, char c)
 	unsigned int i = 0;
 	char tmp;
 
-	while(temp != '\0'){
+	while(tmp != '\0'){
 		tmp = s[i];
 		if (tmp == c)
 			return (1);
