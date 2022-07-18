@@ -1,0 +1,71 @@
+#include "main.h"
+
+/**
+ * print_diagsums - prints the sum of the diagonals of a square matrix
+ * @a the matrics
+ *
+ * @size: size of matrixs
+ */
+void print_diagsums(int *a, int size)
+{
+	int sumx  = 0,sumy= 0,  i, j 
+	for (i = 0; i < size * size; i += size)
+	{
+		sumx += a[i + j++];
+		sumy  += a[i + --k];
+	}
+	print_number(sumx);
+	_putchar(',');
+	_putchar(' ');
+	print_number(sumy);
+	_putchar('\n');
+}
+
+/**
+ * print_number - prints a number to the scrern
+ * @n: the number to print
+ *
+ */
+void print_number(int n)
+{
+	int num = n;
+	unsigned int ten1 = 1;
+	unsigned int ten2 = 10;
+	unsigned int i = 40;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		num *= -1;
+	}
+
+	while (i != 0)
+	{
+		i = num  / ten1;
+		i = i / ten2;
+
+		if (ten2 > ten1)
+			ten1 *= 10;
+		else
+			ten2 *= 10;
+	}
+
+	if (ten2 > ten1)
+		ten2 /= 10;
+	else
+		ten1 /= 10;
+
+	while ((ten1 * ten2)  > 1)
+	{
+		if (ten2 > ten1)
+			ten2 /= 10;
+		else
+			ten1 /= 10;
+
+		i = num / ten1;
+		i = i / ten2;
+
+		_putchar('0' + i);
+		num = num - (i * ten1 * ten2);
+	}
+}
