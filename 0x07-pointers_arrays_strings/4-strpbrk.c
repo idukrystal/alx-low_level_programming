@@ -36,7 +36,7 @@ char *_strpbrk(char *s, char *accept)
 int contains(char *s, char c)
 {
 	unsigned int i = 0;
-	char tmp;
+	char tmp = s[0];
 
 	while(tmp != '\0'){
 		tmp = s[i];
