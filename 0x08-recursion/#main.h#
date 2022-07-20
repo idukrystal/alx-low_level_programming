@@ -1,0 +1,54 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
+void _puts_recursion(char *s);
+void _print_rev_recursion(char *s);
+int _strlen_recursion(char *s);
+int factorial(int n);
+int _pow_recursion(int x, int y);
+int _sqrt_recursion(int n);
+int is_sqrt(int, int);
+int is_prime_number(int n);
+int prime(int, int, int);
+int _strlen(char *);
+int is_palindrome(char *s);
+char b = w[0];
+    char a;
+    int p = 0;
+    int j;
+    char tmp = '*';
+    
+    for (int i = 0 ; i < strlen(s); i++)
+    {
+        a = s[i];
+
+        printf("     %i=%c    %i=%c\n", i,a,p, b);
+        if (a == b)
+        {
+            b = w[++p];
+            continue;
+        }
+        else if (b == '*')
+        {
+            //printf("  tes  %c \n",w[p + 1]);
+            tmp = '*';
+            int j = 0;
+            while (tmp == '*')
+            {
+                tmp = w[p + j];
+                j++;
+            }
+            printf("     j = %i", j);
+           if (a == tmp)
+                 p += --j;
+                 b = w[p];
+            if (p < (strlen(w) - 1))
+                   b = w[++p];
+            continue;
+        }
+        else if (p != 0 && w[p - 1] == '*')
+               
+              continue;
+        break;
+#endif /* MAIN_H */
