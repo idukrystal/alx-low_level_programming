@@ -1,0 +1,15 @@
+#include "main.h"
+int _sqrt_recursion(int n)
+{
+	return (is_sqrt(n, 1));
+}
+
+int is_sqrt(int num, int val)
+{
+	int cur = val * val;
+	if (cur  > num)
+		return (-1);
+	if (cur  == num)
+		return (val);
+	return (is_sqrt(num, ++val));
+}
