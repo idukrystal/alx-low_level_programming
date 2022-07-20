@@ -9,7 +9,7 @@
 int is_palindrome(char *s)
 {
 	int i = 0;
-	int len  = _strlen(s);
+	int len  = _strlen_recursion(s);
 
 
 	for (; i < len / 2; i++)
@@ -20,20 +20,16 @@ int is_palindrome(char *s)
 	return (1);
 
 }
-#include "main.h"
 
 /**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
+ * _strlen_recursion - computes the length of a string
+ * @s: the string
  *
- * Return: length of string @s
+ * Return: length of @s
  */
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
+	if (!*s)
+		return (0);
+	return (1 + _strlen_recursion(s + 1));
 }

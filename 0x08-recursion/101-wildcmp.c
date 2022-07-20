@@ -10,7 +10,7 @@
 int wildcmp(char *s, char *w)
 {
 	char b = w[0],  a, tmp = '*';
-	int p = 0, i, j, len = _strlen(s), lenw = _strlen(w);
+	int p = 0, i, j, len = _strlen_recursion(s), lenw = _strlen_recursion(w);
 
 	for (i = 0 ; i < len; i++)
 	{
@@ -49,20 +49,16 @@ int wildcmp(char *s, char *w)
 	}
 	return (1);
 }
-#include "main.h"
 
 /**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
+ * _strlen_recursion - computes the length of a string
+ * @s: the string
  *
- * Return: length of string @s
+ * Return: length of @s
  */
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
-	int i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
+	if (!*s)
+		return (0);
+	return (1 + _strlen_recursion(s + 1));
 }
