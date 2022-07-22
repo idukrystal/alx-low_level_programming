@@ -11,7 +11,6 @@ int main(int argc, char **argv)
 	int no  = 0;
 	int i, coin_no = 0;
 	int change = atoi(argv[1]);
-	int changed = 0;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
