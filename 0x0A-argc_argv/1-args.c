@@ -8,8 +8,11 @@
  */
 int main(int argc, char **argv)
 {
-	int no = (argc  > 0) ? argc - 1 : argc;
+	int no;
 
+	if (!argv[0])
+		return (404);
+	no = (argc  > 0) ? argc - 1 : argc;
 	printf("%i\n", no);
 	return (0);
 
