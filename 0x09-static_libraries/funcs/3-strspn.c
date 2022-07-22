@@ -12,31 +12,7 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0;
 
-	while (s[i] != '\0' )//&& contains(accept, s[i]))
+	while (s[i] != '\0' && accept)//&& contains(accept, s[i]))
 		i++;
 	return (i);
-}
-
-/**
- * contains - checks if a string contains a char
- * @s: the string
- *
- * @c: the char
- *
- * Return: 1 if char is found 0 othewise
- */
-int contains(char *s, char c)
-{
-	unsigned int i = 0;
-	char tmp;
-
-	do {
-		tmp = s[i];
-		if (tmp == c)
-			return (1);
-
-		i++;
-	} while (tmp != '\0');
-
-	return (0);
 }

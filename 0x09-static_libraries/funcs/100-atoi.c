@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	unsigned int num = 0;
-	int len = _strlen(s), start = -1, stop =  0;
+	int len = _strlen(s); //start = -1, stop =  0;
 	int i = 0, connects = 1, neg = 1;
 	char c;
 
@@ -36,10 +36,10 @@ int _atoi(char *s)
 				connects = 1;
 				continue;
 			}
-			start = i;
+			//start = i;
 			while (c >=  '0'  &&  c <= '9')
 			{
-				stop  = i;
+				//stop  = i;
 				i++;
 				c = *(s + i);
 			}
@@ -48,45 +48,4 @@ int _atoi(char *s)
 		}
 	}
 	return (num * neg);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
- *
- * Return: length of string @s
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*(s + i) != '\0')
-		i++;
-
-	return (i);
-}
-
-/**
- * to_int - extract an int betweet two points in a string
- * @s: string to extract int from
- *
- * @start: where int starts from in string
- *
- * @stop: where int stops in string
- *
- * Return: extracted int
- */
-int to_int(char *s, int start, int stop)
-{
-	unsigned int tens = 1;
-	int j = 0;
-	int num = 0;
-
-	for (j = stop; j >= start; j--)
-	{
-		num += (*(s + j) - '0') * tens;
-		tens *= 10;
-	}
-
-	return (num);
 }
