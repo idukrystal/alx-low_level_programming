@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "main.h"
-
+#include <string.h>
 /**
  * main - entry point of program: adds  its Cl args
  * @argc: number of command line arguments
