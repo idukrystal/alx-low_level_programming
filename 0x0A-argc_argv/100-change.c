@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
 	int no  = 0;
 	int i, coin_no = 0;
-	int change = atoi(argv[1]);
+	int change ;
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -19,6 +19,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		return (1);
 	}
+	change = atoi(argv[1]);
 	if (change  < 0)
 	{
 		printf("0\n");
