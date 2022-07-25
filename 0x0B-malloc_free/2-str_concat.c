@@ -1,23 +1,28 @@
 #include "main.h"
 #include <stdlib.h>
-
+/**
+ * str_concat - joins two string together
+ * @s1: string 1
+ * @s2: string 2
+ * Return: pointer to new string
+ */
 char *str_concat(char *s1, char *s2)
 {
 	unsigned int len1 = (s1 != NULL) ? _strlen(s1) : 0;
-	unsigned int len2 = (s2 != NULL) ? _strlen(s2) :0;
+	unsigned int len2 = (s2 != NULL) ? _strlen(s2) : 0;
 	unsigned int len = len1 + len2;
-	char * new = malloc((sizeof(char) * len) + 1);
-	unsigned int i;
+	char *new = malloc((sizeof(char) * len) + 1);
+	unsigned int i = 0;
 
-	if (s1 != NULL)
+	if (s1 != NULL && new != NULL)
 	{
 		for (; i < len1; i++)
 			new[i] = s1[i];
 	}
-	if (s2 != NULL)
+	if (s2 != NULL && new != NULL)
 	{
 		for (; i <= len; i++)
-			new[i] = s2[len - len1];
+			new[i] = s2[i - len1];
 	}
 	new[i] = '\0';
 
