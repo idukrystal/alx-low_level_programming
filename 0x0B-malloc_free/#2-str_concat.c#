@@ -14,18 +14,18 @@ char *str_concat(char *s1, char *s2)
 	char *new = malloc((sizeof(char) * len) + 1);
 	unsigned int i = 0;
 
-	if (s1 != NULL && new != NULL)
+	if (new == NULL)
+	if (s1 != NULL)
 	{
 		for (; i < len1; i++)
 			new[i] = s1[i];
 	}
-	if (s2 != NULL && new != NULL)
+	if (s2 != NULL
 	{
 		for (; i <= len; i++)
 			new[i] = s2[i - len1];
 	}
-        if (new != NULL)
-		new[i] = '\0';
+	new[i] = '\0';
 
 	return (new);
 }
