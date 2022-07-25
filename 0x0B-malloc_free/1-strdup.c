@@ -8,8 +8,8 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int i = 0, len = (str != NULL) ? _strlen(str) : 0;
-	char *dup = (len != 0) ? malloc((sizeof(char) * len) + 1) : NULL;
+	unsigned int i = 0, len = (str != NULL) ? _strlen(str) : -1;
+	char *dup = (!len < 0) ? malloc((sizeof(char) * len) + 1) : NULL;
 
 	if (dup != NULL)
 	{
