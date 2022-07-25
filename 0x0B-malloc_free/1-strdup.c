@@ -8,12 +8,12 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int len = _strlen(str), i;
-	char *dup = malloc(sizeof(char) * len);
+	unsigned int i, len = (str != NULL) ? _strlen(str), i : 0;
+	char *dup = (len != 0) ? malloc((sizeof(char) * len) + 1) : NULL;
 
 	if (dup != NULL)
 	{
-		for (i = 0; i < len; i++)
+		for (i = 0; i <=  len; i++)
 			dup[i] = str[i];
 	}
 	return (dup);
