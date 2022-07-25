@@ -7,7 +7,7 @@ char *str_concat(char *s1, char *s2)
 	unsigned int len2 = (s2 != NULL) ? _strlen(s2) :0;
 	unsigned int len = len1 + len2;
 	char * new = malloc((sizeof(char) * len) + 1);
-	int i;
+	unsigned int i;
 
 	if (s1 != NULL)
 	{
