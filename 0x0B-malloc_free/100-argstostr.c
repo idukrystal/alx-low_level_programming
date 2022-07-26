@@ -11,7 +11,7 @@ char *argstostr(int ac, char **av)
 {
 	unsigned int i, total_length = 0, ca, c_pos = 0;
 	char *string;
-	int *lengths = malloc(sizeof(int) * ac);
+	int lengths[5000];
 
 	ca = ac;
 	if (ac == 0 || av == NULL)
@@ -28,7 +28,6 @@ char *argstostr(int ac, char **av)
 		c_pos = insert_substring(string, av[i], lengths[i], c_pos);
 	}
 	string[c_pos] = '\0';
-	free(lengths);
 	return (string);
 }
 
