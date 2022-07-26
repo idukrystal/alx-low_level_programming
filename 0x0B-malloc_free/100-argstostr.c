@@ -11,7 +11,7 @@ char *argstostr(int ac, char **av)
 {
 	unsigned int i, total_length, ca, c_pos = 0;
 	char *string;
-	int lengths = malloc(sizeof(int) * ac);
+	int *lengths = malloc(sizeof(int) * ac);
 
 	ca = ac;
 	if (ac == 0 || av == NULL)
