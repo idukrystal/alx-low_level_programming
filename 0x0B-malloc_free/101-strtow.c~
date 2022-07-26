@@ -1,0 +1,35 @@
+#include "main.h"
+#include <stdlib.h>
+
+char **strtow(char *str)
+{
+	unsigned int count = count_words(str), i, j, k, start = 0;
+	char **array = malloc((sizeof(char *) * count) + 1);
+
+	for (i = 0; i < count; i++)
+	{
+		for (j = start; str[j] != ' '; j++)
+		{
+		}
+		array[i] = malloc((sizeof(char) * (j - start)) + 1);
+		for (k = start; k < j; k++)
+		{
+			array[i][k - start] = str[k];
+		}
+		array[i][k] = '\0';
+		start = ++j
+	}
+	return array;
+}
+
+unsigned int count_words (char *str)
+{
+	unsigned int i, count, len;
+
+	for (i = 0; i < len; i++)
+	{
+		if (str[i] == ' ')
+			count++;
+	}
+	return ++count;
+}
