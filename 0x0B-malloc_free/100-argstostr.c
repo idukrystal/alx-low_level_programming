@@ -17,13 +17,13 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 1; i < ca; i++)
 	{
 		lengths[i] = _strlen(av[i]);
 		total_length = lengths[i] + 1;
 	}
 	string = malloc((sizeof(char) * total_length) + 1);
-	for (i = 1; i < ac; i++)
+	for (i = 1; i < ca; i++)
 	{
 		c_pos = insert_substring(string, av[i], lengths[i], c_pos);
 	}
