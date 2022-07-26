@@ -9,10 +9,11 @@
  */
 char *argstostr(int ac, char **av)
 {
-	unsigned int i, total_length, c_pos = 0;
+	unsigned int i, total_length, ca, c_pos = 0;
 	char *string;
-	int lengths[ac];
+	int lengths = malloc(sizeof(int) * ac);
 
+	ca = ac;
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
@@ -27,6 +28,7 @@ char *argstostr(int ac, char **av)
 		c_pos = insert_substring(string, av[i], lengths[i], c_pos);
 	}
 	string[c_pos] = '\0';
+	free(lengths);
 	return (string);
 }
 
