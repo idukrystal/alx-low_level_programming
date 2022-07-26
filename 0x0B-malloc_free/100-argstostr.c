@@ -9,7 +9,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	unsigned int i, total_length, ca, c_pos = 0;
+	unsigned int i, total_length = 0, ca, c_pos = 0;
 	char *string;
 	int *lengths = malloc(sizeof(int) * ac);
 
@@ -20,7 +20,7 @@ char *argstostr(int ac, char **av)
 	for (i = 1; i < ca; i++)
 	{
 		lengths[i] = _strlen(av[i]);
-		total_length = lengths[i] + 1;
+		total_length += lengths[i] + 1;
 	}
 	string = malloc((sizeof(char) * total_length) + 1);
 	for (i = 1; i < ca; i++)
