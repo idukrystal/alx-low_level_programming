@@ -26,11 +26,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		{
 			cat[i] = s2[i - len1];
 		}
-		cat[len] = '\0';
+		cat[i] = '\0';
 	}
 	return (cat);
 }
-#include "main.h"
 
 /**
  * _strlen - returns the length of a string
