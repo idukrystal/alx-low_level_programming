@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
  * malloc_checked - trys to  allocates memory of given size on error-98
  * @b: the size of space required
