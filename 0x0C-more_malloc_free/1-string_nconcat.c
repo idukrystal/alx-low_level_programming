@@ -1,48 +1,51 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * string_nconcat - concates two string
- * @s1: string 1
- * @s2: string 2
- * @n: no of char to cpy from 2
- * Return: pointer to cated string
+ * string_nconcat - concatenates two strings.
+ * @s1: first string
+ * @s2: second string
+ * @n: index
+ * Return: char pointer
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len1 = (s1 != NULL) ? _strlen(s1) : 0;
-	unsigned int len2 = (s2 != NULL) ? _strlen(s2) : 0;
-	unsigned int len = (len2 > n) ? len1 + n : len1 + len2;
-	char *cat = malloc(sizeof(char *) * (len + 1));
-	unsigned int i;
+	char *p;
+	unsigned int size1 = 0, size2 = 0, i;
 
-	if (cat != NULL)
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	while (s1[size1] != '\0')
 	{
-		for (i = 0; i < len1; i++)
-		{
-			cat[i] = s1[i];
-		}
-		for (; i < len; i++)
-		{
-			cat[i] = s2[i - len1];
-		}
-		cat[i] = '\0';
+		size1++;
 	}
-	return (cat);
-}
 
-/**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
- *
- * Return: length of string @s
- */
-int _strlen(char *s)
-{
-	int i = 0;
+	while (s2[size2] != '\0')
+	{
+		size2++;
+	}
 
-	while (s[i] != '\0')
-		i++;
+	if (n > size2)
+	n = size2;
+	p = malloc((size1 + n + 1) * sizeof(char));
 
-	return (i);
+	if (p == NULL)
+		return (0);
+
+	for (i = 0; i < size1; i++)
+	{
+		p[i] = s1[i];
+	}
+
+	for (; i < (size1 + n); i++)
+	{
+		p[i] = s2[i - size1];
+	}
+	p[i] = '\0';
+
+return (p);
 }
