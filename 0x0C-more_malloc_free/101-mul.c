@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <inttypes.h>
 
 /**
  * main - multiplies two positive numbers
@@ -11,9 +8,8 @@
  */
 int main(int argc, char *argv[])
 {
-	uintmax_t mul;
-	int i, j;
-
+unsigned long mul;
+int i, j;
 	if (argc != 3)
 	{ printf("Error\n");
 	exit(98); }
@@ -27,7 +23,7 @@ int main(int argc, char *argv[])
 		}
 
 	}
-	mul = strtoumax(argv[1], NULL, 10) *  strtoumax(argv[2], NULL, 10);
-	printf("%ju\n", mul);
+	mul = atol(argv[1]) *  atol(argv[2]);
+	printf("%lu\n", mul);
 return (0);
 }
