@@ -1,86 +1,83 @@
-#include "dog.h"
 #include <stdlib.h>
+#include "dog.h"
 
 /**
- * new_dog - creates a new struct dog
- * @name: dogs name
- * @age: new dogs age
- * @owner: new dogs owner
- * Return: pointer ti new dog;
+ * _copy  -   Make a copy of passed in argument
+ * @src:      Data to make copy of
+ * Return:    Pointer
  */
+
+char *_copy(char *src)
+{
+	char *ptr;
+	int i, len;
+
+	if (src == NULL)
+	{
+		return (NULL);
+	}
+
+	for (len = 0; src[len] != '\0'; len++)
+		;
+
+	ptr = malloc(sizeof(char) * (len + 1));
+
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		ptr[i] = src[i];
+	}
+
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+/**
+ * new_dog     - Create a new dog variable
+ * @name:        Name of the dog
+ * @age:         Age of the dog
+ * @owner:       Owner of the dog
+ * Return:       Pointer to new dog variable
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *dog;
-	char *n = NULL, *o = NULL;
-	int len_n = 0, len_o = 0;
+	dog_t *snoopie;
+	char *new_name, *new_owner;
 
-	if ((name == NULL || owner == NULL))
-		return (NULL);
-
-	dog = malloc(sizeof(dog_t));
-	if (dog == NULL)
-		return (NULL);
-
-	len_n = _strlen(name);
-	n = malloc(len_n);
-	if (n == NULL)
+	if (name == NULL || owner == NULL)
 	{
-		free (dog);
 		return (NULL);
 	}
-	n = _strcpy(n, name, len_n);
-	dog->name = n;
 
-	len_o = _strlen(owner);
-	o = malloc(len_o);
-	if (o == NULL)
+	snoopie = malloc(sizeof(dog_t));
+	if (snoopie == NULL)
 	{
-		free(dog->name);
-		free(dog);
 		return (NULL);
 	}
-	o = _strcpy(o, owner, len_o);
-	dog->owner = o;
-	dog->age = age;
 
-	return (dog);
-}
-
-/**
- * _strcpy - copies src to dest
- * @src: string to copy
- *
- * @dest: buffer to copy it to
- *
- * @len: size of string  to be copied
- *
- * Return: pointer to buffer
- */
-char *_strcpy(char *dest, char *src, int len)
-{
-	int i = 0;
-
-	for (; i < len; i++)
+	new_name = _copy(name);
+	if (new_name == NULL)
 	{
-		dest[i] = src[i];
+		free(snoopie);
+		return (NULL);
 	}
-	dest[i] = '\0';
+	(*snoopie).name = new_name;
 
-	return (dest);
-}
+	(*snoopie).age = age;
 
-/**
- * _strlen - returns the length of a string
- * @s: string to calculatr length of
- *
- * Return: length of string @s
- */
-int _strlen(char *s)
-{
-	int i = 0;
+	new_owner = _copy(owner);
+	if (new_owner == NULL)
+	{
+		free((*snoopie).name);
+		free(snoopie);
+		return (NULL);
+	}
+	(*snoopie).owner = new_owner;
 
-	while (s[i] != '\0')
-		i++;
-
-	return (i);
+	return (snoopie);
 }
