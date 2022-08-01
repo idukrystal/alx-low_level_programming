@@ -28,18 +28,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free (dog);
 		return (NULL);
 	}
-	_strcpy(n, name, len_n);
+	n = _strcpy(n, name, len_n);
 	dog->name = n;
 
 	len_o = _strlen(owner);
 	o = malloc(len_o);
 	if (o == NULL)
 	{
-		free(n);
+		free(dog->name);
 		free(dog);
 		return (NULL);
 	}
-	_strcpy(o, owner, len_o);
+	o = _strcpy(o, owner, len_o);
 	dog->owner = o;
 	dog->age = age;
 
@@ -64,7 +64,7 @@ char *_strcpy(char *dest, char *src, int len)
 	{
 		dest[i] = src[i];
 	}
-	dest[i] = src[i];
+	dest[i] = '\0';
 
 	return (dest);
 }
