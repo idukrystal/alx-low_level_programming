@@ -23,6 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (n == NULL)
 			return (NULL);
 		_strcpy(n, name, len_n);
+		dog->name = n;
 	}
 	if (owner != NULL)
 	{
@@ -31,10 +32,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		if (o == NULL)
 			return (NULL);
 		_strcpy(o, owner, len_o);
+		dog->owner = o;
 	}
-	dog->name = n;
 	dog->age = age;
-	dog->owner = o;
 
 	return (dog);
 }
