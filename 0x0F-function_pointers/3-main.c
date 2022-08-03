@@ -19,8 +19,8 @@ int main(int argc, char **argv)
 
 	if (argv[2][1] != '\0')
 	{
-		printf("Error\n");
-		exit(98);
+		printf("Error go\n");
+		exit(99);
 	}
 
 	f = *get_op_func(argv[2]);
