@@ -1,3 +1,5 @@
+#include "function_pointers.h"
+
 /**
  * array_iterator - passea each elment of array to function
  * @array: the array
@@ -6,7 +8,7 @@
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; i < size; i++)
 	{
