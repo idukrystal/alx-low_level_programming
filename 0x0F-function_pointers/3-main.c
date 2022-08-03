@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
 	if (argv[2][1] != '\0')
 	{
-		printf("Error go\n");
+		printf("Error\n");
 		exit(99);
 	}
 
