@@ -27,9 +27,7 @@ int main(int argc, char **argv)
 	}
 	for (i = 0; i < b; i++)
 	{
-		printf("%x", *(m + i));
-		if (i != (b - 1))
-			putchar(' ');
+		printf("%0x", *(m + i));
 	}
 	putchar('\n');
 	return (0);
