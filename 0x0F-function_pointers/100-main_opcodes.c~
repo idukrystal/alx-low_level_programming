@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{
+	char  *m = (char *)(main + 0);
+
+	for (int i = 0; i < atoi(argv[1]); i++)
+	{
+		printf("%x ", *(m + i));
+	}
+	putchar('\n');
+}
