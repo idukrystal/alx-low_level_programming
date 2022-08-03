@@ -10,14 +10,17 @@
 int main(int argc, char **argv)
 {
 	char  *m = (char *)(main + 0);
-	int i;
+	int i, int b;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	if (atoi(argv[i]) < 0)
+	b = atoi(argv[1]);
+
+
+	if ( < 0)
 	{
 		printf("Error\n");
 		exit(2);
