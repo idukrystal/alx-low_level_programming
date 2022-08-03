@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	char  *m = (char *)(main + 0);
-	int i, int b;
+	int i, b;
 
 	if (argc != 2)
 	{
@@ -20,12 +20,12 @@ int main(int argc, char **argv)
 	b = atoi(argv[1]);
 
 
-	if ( < 0)
+	if (b < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	for (i = 0; i < atoi(argv[1]); i++)
+	for (i = 0; i < b; i++)
 	{
 		printf("%x ", *(m + i));
 	}
