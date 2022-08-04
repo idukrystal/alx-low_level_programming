@@ -9,13 +9,12 @@
  */
 void print_all(const char *format, ...)
 {
-	unsigned int i = 0, len;
+	unsigned int i = 0, len = 0;
 	va_list ap;
 	char *tmp;
 
-	if (format == NULL)
-		return;
-	len = _strlen(format);
+	if (format != NULL)
+		len = _strlen(format);
 
 	va_start(ap, format);
 	while (i < len)
