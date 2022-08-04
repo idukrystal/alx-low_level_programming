@@ -9,12 +9,15 @@
  */
 void print_all(const char *format, ...)
 {
-	unsigned int i = 0, len = _strlen(format);
+	unsigned int i = 0, len;
 	va_list ap;
 	char *tmp;
 
-	va_start(ap, format);
+	if (format == NULL)
+		return;
+	len = _strlen(format);
 
+	va_start(ap, format);
 	while (i < len)
 	{
 		switch (format[i])
