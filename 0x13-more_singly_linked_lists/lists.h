@@ -48,4 +48,7 @@ int contains(const listptr_t *, const long);
 listptr_t *add_nodeptr(listptr_t **head, const long n);
 void free_listptr(listptr_t *head);
 
+size_t free_listint_safe(listint_t **h);
+size_t free_t(listint_t *, listptr_t **);
+
 #endif /* LISTS_H */
