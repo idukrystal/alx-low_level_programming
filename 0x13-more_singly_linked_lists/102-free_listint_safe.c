@@ -16,7 +16,8 @@ size_t free_listint_safe(listint_t **h)
 	return (size);
 }
 
-
+#ifndef Mall
+#define Mall
 /**
  * add_nodeptr - adds a new node
  * @head: pounter to list
@@ -68,7 +69,7 @@ void free_listptr(listptr_t *head)
 	free_listptr(head->next);
 	free(head);
 }
-
+#endif
 /**
  * free_t - frees a lost of ints
  * @head: starting node

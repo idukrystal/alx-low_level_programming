@@ -44,11 +44,21 @@ int ret_and_swap(listint_t *node, int old, int new);
 int swap(listint_t *n, int val, size_t pos,size_t pos2);
 
 size_t print_listint_safe(const listint_t *head);
+int contains2(const listptr_t *, const long);
+listptr_t *add_nodeptr2(listptr_t **head, const long n);
+void free_listptr(listptr_t *head);
+int contains2(const listptr_t *, const long);
+listptr_t *add_nodeptr2(listptr_t **head, const long n);
+void free_listptr2(listptr_t *head);
+
 int contains(const listptr_t *, const long);
 listptr_t *add_nodeptr(listptr_t **head, const long n);
 void free_listptr(listptr_t *head);
 
 size_t free_listint_safe(listint_t **h);
 size_t free_t(listint_t *, listptr_t **);
+
+listint_t *find_listint_loop(listint_t *head);
+listint_t *get_loop(listint_t *, listint_t *);
 
 #endif /* LISTS_H */
