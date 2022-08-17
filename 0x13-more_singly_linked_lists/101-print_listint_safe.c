@@ -23,7 +23,6 @@ size_t print_listint_safe(const listint_t *h)
 		else
 		{
 			printf("-> [%p] %i\n", (void *) node, node->n);
-			printf("(nil), (nil)\n");
 			break;
 		}
 	}
@@ -45,7 +44,7 @@ listptr_t *add_nodeptr(listptr_t **head, const long n)
 		exit(98);
 	node = malloc(sizeof(*node));
 	if (node == NULL)
-		exit (98);
+		exit(98);
 
 	node->p = (long) n;
 	node->next = (*head);
