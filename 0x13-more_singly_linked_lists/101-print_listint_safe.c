@@ -21,7 +21,11 @@ size_t print_listint_safe(const listint_t *h)
 			count++;
 		}
 		else
+		{
+			printf("-> [%p] %i\n", (void *) node, node->n);
+			printf("(nil), (nil)\n");
 			break;
+		}
 	}
 	free_listptr(adds);
 	return (count);
