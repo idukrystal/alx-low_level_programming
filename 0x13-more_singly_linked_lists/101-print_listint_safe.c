@@ -41,7 +41,7 @@ listptr_t *add_nodeptr(listptr_t **head, const long n)
 		exit(98);
 	node = malloc(sizeof(*node));
 	if (node == NULL)
-		return (NULL);
+		exit (98);
 
 	node->p = (long) n;
 	node->next = (*head);
