@@ -46,5 +46,6 @@ int swap(listint_t *n, int val, size_t pos,size_t pos2);
 size_t print_listint_safe(const listint_t *head);
 int contains(const listptr_t *, const long);
 listptr_t *add_nodeptr(listptr_t **head, const long n);
+void free_listptr(listptr_t *head);
 
 #endif /* LISTS_H */

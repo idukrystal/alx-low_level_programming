@@ -75,6 +75,6 @@ void free_listptr(listptr_t *head)
 {
 	if (head == NULL)
 		return;
-	free_listint(head->next);
+	free_listptr(head->next);
 	free(head);
 }
