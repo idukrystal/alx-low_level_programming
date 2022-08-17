@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *h)
 	{
 		if (!contains(adds, (long)node))
 		{
-			printf("[%#lx] %i\n", node, node->n);
+			printf("[%#lx] %i\n", (long) node, node->n);
 			add_nodeptr(&adds, (long) node);
 			count++;
 		}
