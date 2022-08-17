@@ -1,5 +1,10 @@
 #include "lists.h"
 
+/**
+ * free_listint_safe - frees a loop even if it is looped
+ * @h: lists head
+ * Return: list size;
+ */
 size_t free_listint_safe(listint_t **h)
 {
 	listptr_t *adds = NULL;
@@ -7,12 +12,11 @@ size_t free_listint_safe(listint_t **h)
 
 	free_listptr(adds);
 	*h = NULL;
-        h = NULL;
+	h = NULL;
 	return (size);
 }
 
-#ifndef FUNCS
-#define FUNCS
+
 /**
  * add_nodeptr - adds a new node
  * @head: pounter to list
@@ -65,14 +69,16 @@ void free_listptr(listptr_t *head)
 	free(head);
 }
 
-#endif
 /**
- * free_listint - frees a lost of ints
+ * free_t - frees a lost of ints
  * @head: starting node
+ * @adds: adresses to be freed
+ * Return: size of list
  */
 size_t free_t(listint_t *head, listptr_t **adds)
 {
 	size_t i = 1;
+
 	if (head == NULL)
 		return (0);
 	if (contains(*adds, (long) head))
