@@ -34,7 +34,7 @@ size_t print_listint_safe(const listint_t *h)
 #define Mall
 
 /**
- * add_nodeptr - adds a new node
+ * add_nodeptr2 - adds a new node
  * @head: pounter to list
  * @n: value to add
  * Return: pointer to new node
@@ -56,7 +56,7 @@ listptr_t *add_nodeptr2(listptr_t **head, const long n)
 }
 
 /**
- * contains - checks if
+ * contains2 - checks if
  * @head: head
  * @p: p
  * Return: 1 if found else 0
@@ -74,14 +74,14 @@ int contains2(const listptr_t *head, const long p)
 }
 
 /**
- * free_listptr - frees a lost of ints
+ * free_listptr2 - frees a lost of ints
  * @head: starting node
  */
 void free_listptr2(listptr_t *head)
 {
 	if (head == NULL)
 		return;
-	free_listptr(head->next);
+	free_listptr2(head->next);
 	free(head);
 }
 #endif
