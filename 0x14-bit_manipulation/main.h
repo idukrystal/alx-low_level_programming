@@ -2,7 +2,7 @@
 #define MAIN_H
 #include <stdlib.h>
 
-unsigned int _putchar(char );
+unsigned int _putchar(char);
 unsigned int _pow(unsigned int, unsigned int);
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
