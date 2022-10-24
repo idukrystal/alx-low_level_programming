@@ -19,7 +19,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(tabel);
 		return (NULL);
 	}
-	tabel->size = size
+	tabel->size = size;
 	tabel->array = arr;
 
 	return (tabel);
