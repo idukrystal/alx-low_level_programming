@@ -18,7 +18,7 @@ int main(void)
     hash_table_set(ht, "betty", "cool");
     hash_table_set(ht, "bible", "book");
     hash_table_set(ht, "oso", "staff");
-    hash_table_set(ht, "zebra", "jacket");
+    hash_table_set(ht, "man", "jacket");
     hash_node_t** ar = ht->array;
 
     for (unsigned long int i = 0; i < ht->size; i++)
